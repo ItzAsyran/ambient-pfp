@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Outfit&display=swap');
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('font/HelveticaNeue.ttf') format('truetype');
+  }  
+
+  :root {
+    --bg-color: rgb(24, 24, 24);
+    --primary-color: #fff;
+    --font-family: 'Helvetica Neue', sans-serif;
+    --logo-font: 'Outfit';
+    --blur-animation-duration: 5s;
+    --blur-animation-blur-start: 5px;
+    --blur-animation-blur-mid: 10px;
+    --blur-animation-blur-end: 5px;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--primary-color);
+    overflow: hidden;
+    transition: background-color 0.5s ease-out;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  .title, .drag {
+    font-family: var(--font-family);
+  }
+  
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    font-family: var(--logo-font);
+    user-select: none;
+    cursor: default;
+  }
+  
+  .disclaimer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 10px;
+    font-family: var(--font-family);
+    font-weight: 400;
+  }  
+  
+  .done {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(214, 214, 214, 0.8);
+    padding: 10px;
+  }
+  
+  .done h2 {
+    color: #1f1f1f;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .done h2.donetxt {
+    text-align: right;
+    font-family: var(--font-family);
+    cursor: pointer;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-left: 20vh;
+  }
+  
+  #imageDisplay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 105%;
+    max-height: 105%;
+    border-radius: 50%;
+    animation: blur-pulse var(--blur-animation-duration) infinite;
+  }
+  
+  @keyframes blur-pulse {
+    0% {
+      filter: blur(var(--blur-animation-blur-start));
+    }
+    50% {
+      filter: blur(var(--blur-animation-blur-mid));
+    }
+    100% {
+      filter: blur(var(--blur-animation-blur-end));
+    }
+  }
+  
+  #imageDisplayBlur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  

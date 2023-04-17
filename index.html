@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Uploader</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+</head>
+<body>
+    <div>
+        <h1 class="logo">axysLib</h1>
+    </div>
+    <div class="dialog">
+        <h1 class="title">Update your profile picture.</h1>
+        <form>
+            <input type="file" id="fileInput">
+        </form>
+        <p class="drag">Or drag and drop your file here.</p>
+        <div class="drag-container">
+          <span class="drop-area" id="dropArea"></span>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img id="imageDisplay" src="#" aria-hidden="true">
+        <img id="imageDisplayBlur" src="#" aria-hidden="true">
+    </div>      
+    <div>
+        <h4 class="disclaimer">This page contain color extraction from a image. Sometime
+            it might not work. Please note this is still in beta.
+        </h4>
+    </div>
+    <div class="done"><h2 class="donetxt">Upload</h2></div>
+    <script src="script.js"></script>
+</body>
+</html>
